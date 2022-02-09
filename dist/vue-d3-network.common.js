@@ -11414,7 +11414,7 @@ var d3 = Object.assign({}, d3_force_namespaceObject, src_namespaceObject, d3_zoo
   mounted: function mounted() {
     var _this = this;
 
-    debugger;
+    console.log('zoom');
     this.zoom();
     this.onResize();
     this.$nextTick(function () {
