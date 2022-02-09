@@ -198,8 +198,6 @@ export default {
     zoom () {
       var svg = d3.selectAll('.net-svg')
       var g = svg.selectAll('g')
-      console.log(svg)
-      console.log(g)
       const zoom = d3.zoom().on('zoom', function (event, d) {
         g.attr('transform', event.transform)
       })

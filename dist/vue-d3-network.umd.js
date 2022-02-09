@@ -11481,8 +11481,6 @@ var d3 = Object.assign({}, d3_force_namespaceObject, src_namespaceObject, d3_zoo
     zoom: function zoom() {
       var svg = d3.selectAll('.net-svg');
       var g = svg.selectAll('g');
-      console.log(svg);
-      console.log(g);
       var zoom = d3.zoom().on('zoom', function (event, d) {
         g.attr('transform', event.transform);
       });
