@@ -142,6 +142,7 @@ export default {
     this.updateNodeSvg()
   },
   mounted () {
+    debugger
     this.zoom()
     this.onResize()
     this.$nextTick(() => {
