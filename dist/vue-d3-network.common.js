@@ -11371,6 +11371,7 @@ var d3 = Object.assign({}, d3_force_namespaceObject, src_namespaceObject, d3_zoo
     };
   },
   render: function render(createElement) {
+    console.log('render');
     var ref = 'svg';
     var props = {};
     var renderer = 'svg-renderer';
@@ -11406,6 +11407,7 @@ var d3 = Object.assign({}, d3_force_namespaceObject, src_namespaceObject, d3_zoo
     })]);
   },
   created: function created() {
+    console.log('created');
     this.updateOptions(this.options);
     this.buildNodes(this.netNodes);
     this.links = this.buildLinks(this.netLinks);
@@ -11414,7 +11416,7 @@ var d3 = Object.assign({}, d3_force_namespaceObject, src_namespaceObject, d3_zoo
   mounted: function mounted() {
     var _this = this;
 
-    console.log('zoom');
+    console.log('mounted');
     this.zoom();
     this.onResize();
     this.$nextTick(function () {
@@ -11471,6 +11473,7 @@ var d3 = Object.assign({}, d3_force_namespaceObject, src_namespaceObject, d3_zoo
   },
   methods: {
     zoom: function zoom() {
+      console.log('zoom');
       var svg = d3.select('.net-svg');
       var g = svg.selectAll('g');
       var zoom = d3.zoom().on('zoom', function (event, d) {
