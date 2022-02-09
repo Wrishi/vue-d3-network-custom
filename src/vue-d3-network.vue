@@ -96,7 +96,6 @@ export default {
     }
   },
   render (createElement) {
-    console.log('render')
     let ref = 'svg'
     let props = {}
     let renderer = 'svg-renderer'
@@ -137,14 +136,12 @@ export default {
     })])
   },
   created () {
-    console.log('created')
     this.updateOptions(this.options)
     this.buildNodes(this.netNodes)
     this.links = this.buildLinks(this.netLinks)
     this.updateNodeSvg()
   },
   mounted () {
-    console.log('mounted')
     this.zoom()
     this.onResize()
     this.$nextTick(() => {
@@ -199,16 +196,17 @@ export default {
   },
   methods: {
     zoom () {
-      console.log('zoom')
-      var svg = d3.select('.net-svg')
+      var svg = d3.selectAll('.net-svg')
       var g = svg.selectAll('g')
+      console.log(svg)
+      console.log(g)
       const zoom = d3.zoom().on('zoom', function (event, d) {
         g.attr('transform', event.transform)
       })
       svg.call(zoom).on('dblclick.zoom', null)
     },
     unzoom () {
-      var svg = d3.select('.net-svg')
+      var svg = d3.selectAll('.net-svg')
       var g = svg.selectAll('g')
       const zoom = d3.zoom().on('zoom', function (event, d) {
         g.attr('transform', event.transform)
